@@ -52,6 +52,12 @@ if ! command -v bun &>/dev/null; then
   curl -fsSL https://bun.sh/install | bash
 fi
 
+# --- Zed editor ---
+if ! command -v zed &>/dev/null; then
+  echo "==> Installing Zed editor..."
+  curl -fsSL https://zed.dev/install.sh | sh
+fi
+
 # --- Symlink dotfiles ---
 echo "==> Symlinking dotfiles..."
 
