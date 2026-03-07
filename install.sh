@@ -52,6 +52,12 @@ if ! command -v bun &>/dev/null; then
   curl -fsSL https://bun.sh/install | bash
 fi
 
+# --- opencode ---
+if ! command -v opencode &>/dev/null; then
+  echo "==> Installing opencode..."
+  npm install -g opencode-ai
+fi
+
 # --- Zed editor ---
 if ! command -v zed &>/dev/null; then
   echo "==> Installing Zed editor..."
