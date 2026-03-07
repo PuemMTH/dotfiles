@@ -1,0 +1,9 @@
+[user]
+	name = PuemMTH
+	email = puem.mth@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+[credential]
+	helper = store
