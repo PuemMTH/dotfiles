@@ -7,18 +7,18 @@ DOTFILES_REPO="https://github.com/PuemMTH/dotfiles"
 echo "==> Dotfiles installer"
 echo ""
 
+# --- Install packages (Arch Linux) ---
+if command -v pacman &>/dev/null; then
+  echo "==> Installing packages (requires sudo)..."
+  sudo pacman -Sy --needed --noconfirm \
+    zsh git curl wget vim base-devel \
+    unzip openconnect
+fi
+
 # --- Clone repo if not already present ---
 if [ ! -d "$DOTFILES" ]; then
   echo "==> Cloning dotfiles..."
   git clone "$DOTFILES_REPO" "$DOTFILES"
-fi
-
-# --- Install packages (Arch Linux) ---
-if command -v pacman &>/dev/null; then
-  echo "==> Installing packages..."
-  sudo pacman -Sy --needed --noconfirm \
-    zsh git curl wget vim base-devel \
-    unzip openconnect
 fi
 
 # --- Oh My Zsh ---

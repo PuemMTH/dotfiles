@@ -5,7 +5,7 @@ Personal environment setup for Arch Linux.
 ## Fresh install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PuemMTH/dotfiles/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/PuemMTH/dotfiles/main/install.sh -o install.sh && bash install.sh
 ```
 
 ## What it installs
