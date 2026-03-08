@@ -8,7 +8,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting sudo copyfile jsontools
 source $ZSH/oh-my-zsh.sh
 
 # mise (version manager)
-eval "$(/home/puem/.local/bin/mise activate zsh)"
+eval "$($HOME/.local/bin/mise activate zsh)"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
