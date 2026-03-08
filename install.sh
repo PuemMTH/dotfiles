@@ -11,7 +11,7 @@ echo ""
 if command -v pacman &>/dev/null; then
   echo "==> Installing packages (requires sudo)..."
   sudo pacman -Sy --needed --noconfirm \
-    zsh git curl wget vim base-devel \
+    zsh git github-cli curl wget vim base-devel \
     unzip openconnect
 fi
 
@@ -63,6 +63,20 @@ fi
 if ! command -v opencode &>/dev/null; then
   echo "==> Installing opencode..."
   npm install -g opencode-ai
+fi
+
+# --- yay (AUR helper) ---
+if ! command -v yay &>/dev/null; then
+  echo "==> Installing yay..."
+  git clone https://aur.archlinux.org/yay.git /tmp/yay
+  (cd /tmp/yay && makepkg -si --noconfirm)
+  rm -rf /tmp/yay
+fi
+
+# --- Microsoft Edge ---
+if ! command -v microsoft-edge-stable &>/dev/null; then
+  echo "==> Installing Microsoft Edge..."
+  yay -S --noconfirm microsoft-edge-stable-bin
 fi
 
 # --- Bluetooth ---
