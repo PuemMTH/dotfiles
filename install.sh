@@ -65,6 +65,18 @@ if ! command -v opencode &>/dev/null; then
   npm install -g opencode-ai
 fi
 
+# --- Claude Code ---
+if ! command -v claude &>/dev/null; then
+  echo "==> Installing Claude Code..."
+  npm install -g @anthropic-ai/claude-code
+fi
+
+# --- Gemini CLI ---
+if ! command -v gemini &>/dev/null; then
+  echo "==> Installing Gemini CLI..."
+  npm install -g @google/gemini-cli
+fi
+
 # --- yay (AUR helper) ---
 if ! command -v yay &>/dev/null; then
   echo "==> Installing yay..."
