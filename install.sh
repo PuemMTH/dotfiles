@@ -46,6 +46,13 @@ if ! command -v mise &>/dev/null; then
   curl https://mise.run | sh
 fi
 
+echo "==> Activating mise..."
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(mise activate bash)"
+
+echo "==> Installing tools via mise..."
+mise use -g rust node npm pnpm bun python uv
+
 # --- bun ---
 if ! command -v bun &>/dev/null; then
   echo "==> Installing bun..."
@@ -56,6 +63,19 @@ fi
 if ! command -v opencode &>/dev/null; then
   echo "==> Installing opencode..."
   npm install -g opencode-ai
+fi
+
+# --- Bluetooth ---
+echo "==> Enabling Bluetooth..."
+sudo systemctl enable --now bluetooth
+
+# --- Docker ---
+if ! command -v docker &>/dev/null; then
+  echo "==> Installing Docker..."
+  sudo pacman -Sy --needed --noconfirm docker docker-compose
+  sudo systemctl enable --now docker
+  sudo usermod -aG docker "$USER"
+  echo "    Docker installed. Log out and back in for group membership to take effect."
 fi
 
 # --- Zed editor ---
