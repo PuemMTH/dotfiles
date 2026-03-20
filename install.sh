@@ -124,9 +124,12 @@ symlink() {
   echo "    $dst -> $src"
 }
 
-symlink "$DOTFILES/zsh/.zshrc"      "$HOME/.zshrc"
-symlink "$DOTFILES/git/.gitconfig"  "$HOME/.gitconfig"
-symlink "$DOTFILES/bash/.bashrc"    "$HOME/.bashrc"
+symlink "$DOTFILES/zsh/.zshrc"           "$HOME/.zshrc"
+symlink "$DOTFILES/git/.gitconfig"       "$HOME/.gitconfig"
+symlink "$DOTFILES/bash/.bashrc"         "$HOME/.bashrc"
+symlink "$DOTFILES/tmux/.tmux.conf"      "$HOME/.tmux.conf"
+symlink "$DOTFILES/wezterm/.wezterm.lua" "$HOME/.wezterm.lua"
+symlink "$DOTFILES/vim/.vimrc"           "$HOME/.vimrc"
 
 # --- Local secrets template ---
 if [ ! -f "$HOME/.zshrc.local" ]; then
